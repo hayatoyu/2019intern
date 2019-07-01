@@ -21,6 +21,7 @@ namespace Exercise13
             Hanoi(n,n, 'A', 'B', 'C');
         }
 
+        #region 解答
         static void Hanoi(int n,int no,char source,char temp,char destination)
         {
             if(n == 1)
@@ -34,5 +35,9 @@ namespace Exercise13
                 Hanoi(n - 1,n - 1, temp, source, destination);
             }
         }
+
+        #endregion
+
+
     }
 }

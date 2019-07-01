@@ -16,6 +16,7 @@ namespace Exercise12
             MultipleTable(1, 1, 9, 9);
         }
 
+        #region 解答
         static void MultipleTable(int i,int j,int x,int y)
         {
             if(j > y)
@@ -29,5 +30,8 @@ namespace Exercise12
             Console.Write(i + " * " + j + " = " + (i * j) + "\t");
             MultipleTable(i, ++j, x, y);
         }
+        #endregion
+
+
     }
 }

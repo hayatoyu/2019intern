@@ -35,9 +35,12 @@ namespace Exercise14
             Console.WriteLine(ConvertToTitle(num));
         }
 
+        #region 解答
         static string ConvertToTitle(int num)
         {
             return num < 1 ? string.Empty : ConvertToTitle((num - 1) / 26) + (char)((num - 1) % 26 + 'A');
         }
+        #endregion
+
     }
 }

@@ -21,13 +21,16 @@ namespace Exercise8
             int num1 = int.Parse(input1);
             int num2 = int.Parse(input2);
 
-            while((num1 % num2 > 0) && (num2 % num1 > 0))
+            #region 解答
+            while ((num1 % num2 > 0) && (num2 % num1 > 0))
             {
                 if (num1 > num2)
                     num1 %= num2;
                 else
                     num2 %= num1;
             }
+            #endregion
+
             Console.WriteLine(input1 + " 與 " + input2 + "之最大公因數為 " + Math.Min(num1, num2));
         }
     }

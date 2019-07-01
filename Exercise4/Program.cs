@@ -75,7 +75,7 @@ namespace Exercise4
                 Console.WriteLine("葉大雄的成績是 E");
         }
 
-        
+        #region 函數解答
         static void getGrade(Student s)
         {
             if (s.score >= 90)
@@ -89,6 +89,7 @@ namespace Exercise4
             else
                 Console.WriteLine(s.Name + "的成績是 E");
         }
+        #endregion
 
         class Student
         {
@@ -96,6 +97,7 @@ namespace Exercise4
             public int score;            
         }
 
+        #region 屬性(存取子)使用
         class Student2
         {
             public string Name { get; set; }
@@ -123,5 +125,8 @@ namespace Exercise4
                 Score = score;
             }
         }
+        #endregion
+
+
     }
 }

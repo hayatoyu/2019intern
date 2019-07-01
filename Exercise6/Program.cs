@@ -18,6 +18,7 @@ namespace Exercise6
             int num = int.Parse(input);
             if(num > 1)
             {
+                #region 解答
                 for (int i = 2; i * i <= num; i++)
                 {
                     if (num % i == 0)
@@ -27,6 +28,7 @@ namespace Exercise6
                     }
                 }
                 Console.WriteLine(input + "是質數");
+                #endregion
             }
             else
             {

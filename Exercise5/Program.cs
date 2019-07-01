@@ -14,10 +14,14 @@ namespace Exercise5
         static void Main(string[] args)
         {
             int sum = 0;
-            for(int i = 0;i < 101;i++)
+
+            #region 解答
+            for (int i = 0;i < 101;i++)
             {
                 sum += i;
             }
+            #endregion
+
             Console.WriteLine(sum);
         }
     }

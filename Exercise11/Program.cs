@@ -17,6 +17,7 @@ namespace Exercise11
             Console.WriteLine(Sum(100));
         }
 
+        #region 解答
         static int Sum(int n)
         {
             if (n == 1)
@@ -24,5 +25,8 @@ namespace Exercise11
             else
                 return n + Sum(n - 1);
         }
+        #endregion
+
+
     }
 }
