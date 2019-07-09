@@ -11,25 +11,35 @@ namespace Exercise9
         static void Main(string[] args)
         {
             int[] nums = new int[] { 5,18,37,0,121,73,3};
-            for(int i = 0;i < nums.Length;i++)
+            BubbleSort(nums);
+            for(int i = 0; i < nums.Length;i++)
             {
-                if (IsPrime(nums[i]))
-                    Console.WriteLine(nums[i] + " 是質數");
-                else
-                    Console.WriteLine(nums[i] + " 不是質數");
+                Console.Write($"{nums[i]} \t");
             }
         }
 
-        static bool IsPrime(int num)
+
+        #region 氣泡排序法
+        static void BubbleSort(int[] nums)
         {
-            if (num < 2)
-                return false;
-            for(int i = 2;i * i <= num;i++)
+            bool swap;
+            for(int i = 0;i < nums.Length;i++)
             {
-                if (num % i == 0)
-                    return false;
+                swap = false;
+                for(int j = 0;j < nums.Length - i - 1;j++)
+                {
+                    if(nums[j] > nums[j + 1])
+                    {
+                        swap = true;
+                        int temp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = temp;
+                    }
+                }
+                if (!swap)
+                    return;
             }
-            return true;
         }
+        #endregion
     }
 }
