@@ -30,6 +30,24 @@ namespace Exercise4
             d.Name = "葉大雄";
             d.score = 17;
 
+            getGrade(a);
+            getGrade(b);
+            getGrade(c);
+            getGrade(d);
+
+            ChangeName(a);
+            Console.WriteLine($"a 的名字現在叫 {a.Name}");
+
+            ChangeName(b.Name);
+            Console.WriteLine($"b 的名字現在叫 {b.Name}");
+
+            ModifyScore(c);
+            Console.WriteLine($"c 的成績現在是 {c.score}");
+
+            ModifyScore(d.Name, d.score);
+            Console.WriteLine($"d 的成績現在是 {d.score}");
+
+            /*
             if (a.score >= 90)
                 Console.WriteLine("靜香的成績是 A");
             else if (a.score >= 80)
@@ -73,6 +91,7 @@ namespace Exercise4
                 Console.WriteLine("葉大雄的成績是 D");
             else
                 Console.WriteLine("葉大雄的成績是 E");
+                */
         }
 
         #region 函數解答
@@ -88,8 +107,40 @@ namespace Exercise4
                 Console.WriteLine(s.Name + "的成績是 D");
             else
                 Console.WriteLine(s.Name + "的成績是 E");
-        }
+        }        
         #endregion
+
+        static void ChangeName(Student s)
+        {
+            string oldName = s.Name;
+            Console.WriteLine($" {s.Name} 將被改名成 小夫 ");
+            s.Name = "小夫";
+            Console.WriteLine($" {oldName} 現在叫 {s.Name} ");
+        }
+
+        static void ChangeName(string name)
+        {
+            string oldName = name;
+            Console.WriteLine($" {name} 將被改名成 技子");
+            name = "技子";
+            Console.WriteLine($" {oldName} 現在叫 {name} ");
+        }
+
+        static void ModifyScore(Student s)
+        {
+            int oldScore = s.score;
+            Console.WriteLine($"{s.Name} 的分數 目前為 {s.score}，將加十分");
+            s.score += 10;
+            Console.WriteLine($"{s.Name} 的分數 由 {oldScore} 提升至 {s.score}");
+        }
+
+        static void ModifyScore(string name,int score)
+        {
+            int oldScore = score;
+            Console.WriteLine($"{name} 的分數目前為 {score}，將加十分");
+            score += 10;
+            Console.WriteLine($"{name} 的分數 由 {oldScore} 提升至 {score}");
+        }
 
         class Student
         {
