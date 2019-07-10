@@ -13,22 +13,22 @@ namespace Exercise12
          */
         static void Main(string[] args)
         {
-            MultipleTable(1, 1, 9, 9);
+            MultipleTable(1, 1);
         }
 
         #region 解答
-        static void MultipleTable(int i,int j,int x,int y)
+        static void MultipleTable(int i,int j)
         {
-            if(j > y)
+            if(j > 9)
             {
-                j -= y;
+                j -= 9;
                 i++;
                 Console.WriteLine("\n");
             }
-            if (i > x)
+            if (i > 9)
                 return;
             Console.Write(i + " * " + j + " = " + (i * j) + "\t");
-            MultipleTable(i, ++j, x, y);
+            MultipleTable(i, ++j);
         }
         #endregion
 

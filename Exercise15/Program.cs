@@ -12,8 +12,13 @@ namespace Exercise15
         {
             int[] array1 = new int[] {3,8,10,2,7,5,9,6,78,56,34 };
             string[] array2 = new string[] {"Alex","Mike","Eric","Bob","Tina","David","Leo","Judy" };
-            Sort.BubbleSort(array1);
-            Sort.BubbleSort(array2);
+
+            // ========== 排序兩個陣列 ==========
+            array1 = Sort.QuickSort(array1);
+            array2 = Sort.QuickSort(array2);
+            // ==================================
+
+
             Console.WriteLine("Array1 的元素經過排序後依序為 ：");
             for(int i = 0;i < array1.Length;i++)
             {
@@ -28,27 +33,59 @@ namespace Exercise15
     }
     class Sort
     {
-        public static void BubbleSort<T>(T[] array) where T : IComparable<T>
+        #region 快速排序法
+        public static int[] QuickSort(int[] array)
         {
-            T temp;
-            bool swap;
+            if (array.Length < 2)
+                return array;
+            List<int> left = new List<int>();
+            List<int> right = new List<int>();
+            List<int> result = new List<int>();
+            int idx = array.Length / 2;
+            int pivot = array[idx];
             for(int i = 0;i < array.Length;i++)
             {
-                swap = false;
-                for(int j = 0;j < array.Length - i - 1;j++)
-                {
-                    if(array[j].CompareTo(array[j + 1]) > 0)
-                    {
-                        temp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = temp;
-                        if (!swap)
-                            swap = true;
-                    }
-                }
-                if (!swap)
-                    return;
+                if (i == idx)
+                    continue;
+                if (array[i] >= pivot)
+                    right.Add(array[i]);
+                else
+                    left.Add(array[i]);
             }
+            result.AddRange(QuickSort(left.ToArray()));
+            result.Add(pivot);
+            result.AddRange(QuickSort(right.ToArray()));
+            return result.ToArray();
         }
+        #endregion
+
+        #region 快速排序法(泛型)
+        public static T[] QuickSort<T>(T[] array) where T : IComparable<T>
+        {
+            if (array.Length < 2)
+                return array;
+            List<T> left = new List<T>();
+            List<T> right = new List<T>();
+            List<T> result = new List<T>();
+
+            int idx = array.Length / 2;
+            T pivot = array[idx];
+
+            for(int i = 0;i < array.Length;i++)
+            {
+                if (i == idx)
+                    continue;
+                if (pivot.CompareTo(array[i]) > 0)
+                    left.Add(array[i]);
+                else
+                    right.Add(array[i]);
+            }
+
+            result.AddRange(QuickSort(left.ToArray()));
+            result.Add(pivot);
+            result.AddRange(QuickSort(right.ToArray()));
+            return result.ToArray();
+        }
+        #endregion
     }
 }
