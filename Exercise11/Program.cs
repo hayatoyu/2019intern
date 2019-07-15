@@ -17,15 +17,17 @@ namespace Exercise11
             Console.WriteLine(Sum(100));
         }
 
-        #region 解答
+        
         static int Sum(int n)
         {
+            #region 解答
             if (n == 1)
                 return n;
             else
                 return n + Sum(n - 1);
+            #endregion
         }
-        #endregion
+
 
 
     }

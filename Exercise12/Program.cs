@@ -16,10 +16,11 @@ namespace Exercise12
             MultipleTable(1, 1);
         }
 
-        #region 解答
+        
         static void MultipleTable(int i,int j)
         {
-            if(j > 9)
+            #region 解答
+            if (j > 9)
             {
                 j -= 9;
                 i++;
@@ -27,10 +28,12 @@ namespace Exercise12
             }
             if (i > 9)
                 return;
-            Console.Write(i + " * " + j + " = " + (i * j) + "\t");
+            //Console.Write(i + " * " + j + " = " + (i * j) + "\t");
+            Console.Write($"{i} * {j} = {i * j} \t");
             MultipleTable(i, ++j);
+            #endregion
         }
-        #endregion
+
 
 
     }

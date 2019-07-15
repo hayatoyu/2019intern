@@ -25,12 +25,12 @@ namespace Exercise10
             interns.Add("莊惠軒");
             interns.Sort();
             Console.WriteLine("目前實習生人數 " + interns.Count);
-            string target = "大象愛將";
+            string target = "陳俐妤";
 
             #region 開始搜尋
             int index = BinarySearch(interns, target);
             if (index > -1)
-                Console.WriteLine($"{target} 同學在第 {index + 1} 位");
+                Console.WriteLine($"{target} 同學的索引值為 {index}，在第 {index + 1} 位");
             else
                 Console.WriteLine($"找不到 {target} 同學");
             #endregion

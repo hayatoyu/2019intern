@@ -47,51 +47,9 @@ namespace Exercise4
             ModifyScore(d.Name, d.score);
             Console.WriteLine($"d 的成績現在是 {d.score}");
 
-            /*
-            if (a.score >= 90)
-                Console.WriteLine("靜香的成績是 A");
-            else if (a.score >= 80)
-                Console.WriteLine("靜香的成績是 B");
-            else if (a.score >= 70)
-                Console.WriteLine("靜香的成績是 C");
-            else if (a.score >= 60)
-                Console.WriteLine("靜香的成績是 D");
-            else
-                Console.WriteLine("靜香的成績是 E");
-
-            if (b.score >= 90)
-                Console.WriteLine("出木杉的成績是 A");
-            else if (b.score >= 80)
-                Console.WriteLine("出木杉的成績是 B");
-            else if (b.score >= 70)
-                Console.WriteLine("出木杉的成績是 C");
-            else if (b.score >= 60)
-                Console.WriteLine("出木杉的成績是 D");
-            else
-                Console.WriteLine("出木杉的成績是 E");
-
-            if (c.score >= 90)
-                Console.WriteLine("胖虎的成績是 A");
-            else if (c.score >= 80)
-                Console.WriteLine("胖虎的成績是 B");
-            else if (c.score >= 70)
-                Console.WriteLine("胖虎的成績是 C");
-            else if (c.score >= 60)
-                Console.WriteLine("胖虎的成績是 D");
-            else
-                Console.WriteLine("胖虎的成績是 E");
-
-            if (d.score >= 90)
-                Console.WriteLine("葉大雄的成績是 A");
-            else if (d.score >= 80)
-                Console.WriteLine("葉大雄的成績是 B");
-            else if (d.score >= 70)
-                Console.WriteLine("葉大雄的成績是 C");
-            else if (d.score >= 60)
-                Console.WriteLine("葉大雄的成績是 D");
-            else
-                Console.WriteLine("葉大雄的成績是 E");
-                */
+            Student2 e = new Student2("小夫", 75);
+            Console.WriteLine($"{e.Name} 的分數是 {e.Score} ，成績為 {e.Grade}");
+            Console.WriteLine($"{e.Name} 如果加5分，分數是 {e.Score += 5}，成績為 {e.Grade}");
         }
 
         #region 函數解答
@@ -151,8 +109,8 @@ namespace Exercise4
         #region 屬性(存取子)使用
         class Student2
         {
-            public string Name { get; set; }
-            public int Score { get; private set; }
+            public string Name { get;private set; }
+            public int Score { get; set; }
             public string Grade
             {
                 get

@@ -21,10 +21,11 @@ namespace Exercise13
             Hanoi(n,n, 'A', 'B', 'C');
         }
 
-        #region 解答
+        
         static void Hanoi(int n,int no,char source,char temp,char destination)
         {
-            if(n == 1)
+            #region 解答
+            if (n == 1)
             {
                 Console.WriteLine("將 {0} 號盤從 {1} 移至 {2}", no, source, destination);
             }
@@ -34,9 +35,10 @@ namespace Exercise13
                 Hanoi(1, n, source, temp, destination);
                 Hanoi(n - 1,n - 1, temp, source, destination);
             }
+            #endregion
         }
 
-        #endregion
+
 
 
     }
