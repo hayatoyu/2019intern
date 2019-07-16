@@ -18,28 +18,27 @@ namespace Exercise13
         {
             Console.WriteLine("請輸入 n 層河內塔");
             int n = int.Parse(Console.ReadLine());
-            Hanoi(n,n, 'A', 'B', 'C');
+            Hanoi(1,n,n, 'A', 'B', 'C');
         }
 
         
-        static void Hanoi(int n,int no,char source,char temp,char destination)
+        static int Hanoi(int step,int n,int no,char source,char temp,char destination)
         {
             #region 解答
             if (n == 1)
             {
-                Console.WriteLine("將 {0} 號盤從 {1} 移至 {2}", no, source, destination);
+                Console.WriteLine("步驟{0}：將 {1} 號盤從 {2} 移至 {3}",step, no, source, destination);
             }
             else
             {
-                Hanoi(n - 1,n - 1, source, destination, temp);
-                Hanoi(1, n, source, temp, destination);
-                Hanoi(n - 1,n - 1, temp, source, destination);
+                step = Hanoi(step,n - 1,n - 1, source, destination, temp);
+                step = Hanoi(step,1, n, source, temp, destination);
+                step = Hanoi(step,n - 1,n - 1, temp, source, destination);
             }
+            
+            return n == 1 ? ++step : step;
             #endregion
-        }
-
-
-
+        }        
 
     }
 }
