@@ -31,6 +31,7 @@ namespace Exercise10
             int index = BinarySearch(interns, target);
             if (index > -1)
                 Console.WriteLine($"{target} 同學的索引值為 {index}，在第 {index + 1} 位");
+            
             else
                 Console.WriteLine($"找不到 {target} 同學");
             #endregion

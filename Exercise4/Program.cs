@@ -128,6 +128,9 @@ namespace Exercise4
                 }
             }
 
+            /*
+             * 建構子
+             */
             public Student2(string name,int score)
             {
                 Name = name;
