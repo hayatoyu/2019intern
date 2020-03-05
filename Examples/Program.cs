@@ -10,11 +10,9 @@ namespace Examples
     {
         static void Main(string[] args)
         {
-            string[] students = { "Jessica", "Jenny", "Rebecca","Claire","Claire","Ashley" };            
-            for(int i = 0;i < students.length;i++)
-            {
-
-            }
+            var names = new List<string> { "<name>", "Ana", "Felipe" };
+            foreach (var name in names)
+                Console.WriteLine($"Hello {name.ToUpper()}!");
         }
     }
 }
