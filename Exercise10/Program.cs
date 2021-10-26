@@ -11,21 +11,21 @@ namespace Exercise10
         static void Main(string[] args)
         {
             List<string> interns = new List<string>();
-            interns.Add("陳易陞");
-            interns.Add("吳筱筑");
-            interns.Add("王欣慈");
-            interns.Add("林冠宏");
-            interns.Add("王妤瑄");
-            interns.Add("陳俐妤");
-            interns.Add("曾友彤");
-            interns.Add("魏雅淳");
-            interns.Add("吳玉仙");
-            interns.Add("李旻臻");
-            interns.Add("黃昱瑄");
-            interns.Add("莊惠軒");
+            interns.Add("陳○陞");
+            interns.Add("吳○筑");
+            interns.Add("王○慈");
+            interns.Add("林○宏");
+            interns.Add("王○瑄");
+            interns.Add("陳○妤");
+            interns.Add("曾○彤");
+            interns.Add("魏○淳");
+            interns.Add("吳○仙");
+            interns.Add("李○臻");
+            interns.Add("黃○瑄");
+            interns.Add("莊○軒");
             interns.Sort();
             Console.WriteLine("目前實習生人數 " + interns.Count);
-            string target = "陳俐妤";
+            string target = "陳○妤";
 
             #region 開始搜尋
             int index = BinarySearch(interns, target);
